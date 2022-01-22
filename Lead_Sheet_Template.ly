@@ -15,7 +15,7 @@ melody = \new Staff = "upper" \new Voice = "melody"{
     \relative c' {
       }
 }
-harmonies = \chordmode {      	  
+harmonies = \chordmode {
 }
 verseOne = \lyricmode {
 }
@@ -49,13 +49,16 @@ verseFour = \lyricmode {
     \new Lyrics \lyricsto "melody" {
       \set stanza = #"4. "
       \verseFour
-    }  
+    }
   >>
   \layout {
     indent = #0
     \context {
       \Lyrics
       fontSize = #.6
+    }
+    \context {
+      \ChordNames noChordSymbol = ""
     }
   }
 }

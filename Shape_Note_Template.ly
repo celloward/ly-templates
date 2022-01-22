@@ -1,36 +1,38 @@
 \version "2.18.2"
 #(set-global-staff-size 19.5)
+#(set-default-paper-size "executive" 'landscape)
 \header {
-  title = ""
-  composer = ""
+  title =
+  composer =
+  poet =
   tagline = ##f
 }
 global = {
   \key
   \time
 }
-cantusnotes = \relative c'' {
-
+cantusnotes = \relative c' {
+  \sacredHarpHeads
 }
 cantuswords = \lyricmode {
-
+  \set stanza = "1. "
 }
 altonotes = \relative c' {
-
+  \sacredHarpHeads
 }
 altowords = \lyricmode {
-
+  \set stanza = "2. "
 }
-tenornotes = \relative c' {
+tenornotes = \relative c {
   \clef "G_8"
-
+  \sacredHarpHeads
 }
 tenorwords = \lyricmode {
-
+  \set stanza = "3. "
 }
 bassnotes = \relative c {
   \clef bass
-
+  \sacredHarpHeads
 }
 basswords = \lyricmode {
 
@@ -76,10 +78,16 @@ basswords = \lyricmode {
     >>
   >>
 }
+
+
 \layout {
+  indent = #0
   \context {
     \Voice
     \consists "Ambitus_engraver"
   }
   \set Score.automaticBars = ##f
+}
+\midi {
+ \set Score.midiInstrument = #"reed organ"
 }
